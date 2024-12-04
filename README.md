@@ -1,70 +1,82 @@
-# Getting Started with Create React App
+# Design and Implementation of MFA Using Microsoft Azure Active Directory B2C Authentication
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Abstract
 
-## Available Scripts
+Multi-Factor Authentication (MFA) enhances security by requiring multiple factors to verify a user’s identity. These factors include knowledge (e.g., passwords), possession (e.g., smartphone), inherence (e.g., biometrics), location, and time-sensitive links.
 
-In the project directory, you can run:
+This project explores the implementation of MFA using Microsoft Azure Active Directory B2C (Azure AD B2C) in a React application. Azure AD B2C was selected for its robust security features, ease of integration, and scalability. Comparisons were made with other MFA solutions, including:
+- **Microsoft Entra Multi-Factor Authentication**: Offers advanced security layers.
+- **Google Authenticator**: A free app for generating one-time PINs.
+- **Okta Adaptive MFA**: A customizable, cloud-based identity and access management platform.
+- **Cisco Duo Security**: Provides MFA, Single Sign-On (SSO), and secure remote access.
 
-### `npm start`
+### Keywords
+Multi-Factor Authentication (MFA), Azure AD B2C, Google Authenticator, Okta Adaptive MFA, Cisco Duo Security.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Methodology
 
-### `npm test`
+The implementation utilized Azure AD B2C as the identity management solution to integrate MFA into a React application. Key steps included:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. **Azure AD B2C Tenant Setup**:
+   - Created a tenant to manage identity-related services securely.
+   - Configured the React application with necessary redirect URIs and permissions.
 
-### `npm run build`
+2. **User Flow Configuration**:
+   - Customized "Sign up and Sign in" flows to enforce MFA.
+   - MFA modes included OTPs via SMS or app-generated codes for enhanced security.
+   - Session behaviors were tailored for optimal user convenience and security.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+3. **Integration with React**:
+   - Employed the Microsoft Authentication Library (`@azure/msal-react` and `@azure/msal-browser`).
+   - Configured authentication parameters in `authConfig.js` (e.g., client ID, authority URL, redirect URI).
+   - Used the `MsalProvider` component for global authentication context propagation.
+   - Developed a `SignIn` component for login, logout, and profile display, incorporating JWT decoding for user personalization.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+4. **Token Management**:
+   - Utilized the `acquireTokenSilent` method to acquire tokens in the background, ensuring a seamless user experience.
+   - Stored tokens securely in browser session storage for enhanced performance.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+5. **Rigorous Testing**:
+   - Validated MFA enforcement across different scenarios.
+   - Tested token retrieval, refresh processes, and error handling (e.g., for invalid tokens and network outages).
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Results
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The project successfully implemented Azure AD B2C with MFA in a React application, delivering a secure and user-friendly authentication system. Key outcomes included:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- **Enhanced Security**: MFA effectively mitigated credential theft and unauthorized access.
+- **Seamless Integration**: Azure AD B2C's libraries simplified identity management tasks, reducing developer overhead.
+- **Customizable User Flows**: Flexibility in balancing user convenience and security.
+- **Scalability**: Suitable for applications ranging from small-scale to enterprise-level.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Conclusion
 
-## Learn More
+This project demonstrated the efficacy of Azure AD B2C in building secure, scalable, and efficient authentication systems. By leveraging advanced identity management platforms, developers can address modern security challenges while delivering an intuitive user experience.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## How to Run
 
-### Code Splitting
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/aarthig0611/mfa-frontend.git
+   cd mfa-azure-ad-b2c
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+2. Install Dependencies:  
+   Run the following command to install the required packages:
+   ```bash
+   npm install
 
-### Analyzing the Bundle Size
+3. Set Up Azure AD B2C:
+    Configure your Azure AD B2C tenant and update the authConfig.js file with the relevant credentials.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+4. Start the Application:
+    Run the following command to start the application:
+    ```bash
+    npm start
+    
+The application will be available at http://localhost:3000/. Use the login button to test the authentication flow.
