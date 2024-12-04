@@ -1,5 +1,9 @@
 # Design and Implementation of MFA Using Microsoft Azure Active Directory B2C Authentication
 
+Aarthi Ganesan (MSCS), Inderdeep Rathore (MSCS), Zandra Nguyen (MSCS)
+
+CS504 Software Engineering, School of Technology & Computing, City University of Seattle  
+
 ## Abstract
 
 Multi-Factor Authentication (MFA) enhances security by requiring multiple factors to verify a user’s identity. These factors include knowledge (e.g., passwords), possession (e.g., smartphone), inherence (e.g., biometrics), location, and time-sensitive links.
@@ -61,20 +65,20 @@ This project demonstrated the efficacy of Azure AD B2C in building secure, scala
 
 ## How to Run
 
-1. Clone the repository:
+1. **Clone the repository**:
    ```bash
    git clone https://github.com/aarthig0611/mfa-frontend.git
    cd mfa-azure-ad-b2c
 
-2. Install Dependencies:  
+2. **Install Dependencies**:  
    Run the following command to install the required packages:
    ```bash
    npm install
 
-3. Set Up Azure AD B2C:
+3. **Set Up Azure AD B2C**:
    Configure your Azure AD B2C tenant and update the authConfig.js file with the relevant credentials.
 
-4. Start the Application:
+4. **Start the Application**:
     Run the following command to start the application:
     ```bash
     npm start
