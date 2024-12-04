@@ -1,0 +1,54 @@
+.home {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+  
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.alert {
+    margin: 10px auto;
+    max-width: 600px;
+}
+
+.profile {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    max-width: 600px;
+    margin: 20px auto;
+    text-align: left;
+    background-color: #f8f9fa;
+}
+
+.profile h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #444;
+}
+
+.profile-details {
+    list-style: none;
+    padding: 0;
+}
+
+.profile-details li {
+    margin: 10px 0;
+    font-size: 16px;
+    color: #555;
+}
+
+.profile-details strong {
+    color: #000;
+}
+
+.btn {
+    margin-top: 10px;
+}
+  
