@@ -72,7 +72,7 @@ This project demonstrated the efficacy of Azure AD B2C in building secure, scala
    npm install
 
 3. Set Up Azure AD B2C:
-    Configure your Azure AD B2C tenant and update the authConfig.js file with the relevant credentials.
+   Configure your Azure AD B2C tenant and update the authConfig.js file with the relevant credentials.
 
 4. Start the Application:
     Run the following command to start the application:
