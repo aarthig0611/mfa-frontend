@@ -68,7 +68,7 @@ This project demonstrated the efficacy of Azure AD B2C in building secure, scala
 1. **Clone the repository**:
    ```bash
    git clone https://github.com/aarthig0611/mfa-frontend.git
-   cd mfa-azure-ad-b2c
+   cd mfa-frontend
 
 2. **Install Dependencies**:  
    Run the following command to install the required packages:
